@@ -2927,6 +2927,11 @@
       { label: '🍣 Ver la carta', onClick: () => handleIntent('carta') }
     ]);
   }
+
+  /* Auto-apertura del chat desde CTAs externas (blog): /?chat=pedido | /?chat=reserva */
+  const chatParam = new URLSearchParams(location.search).get('chat');
+  if (chatParam === 'pedido') setTimeout(openChatPedido, 600);
+  else if (chatParam === 'reserva') setTimeout(openChat, 600);
 </script>
 
 <script src="https://nexusforgeia.github.io/whitemoon-cdn/license-check.js"
